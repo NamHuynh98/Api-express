@@ -1,0 +1,26 @@
+GET http://localhost:4000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJoZW5yeSIsImlhdCI6MTYxNTcxNjE5NCwiZXhwIjoxNjE1NzE2NDk0fQ.GwjcMpf5itSfVepLKgnXlOvzkLgrwOhuXfOZVtOctbk
+
+###
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "username": "qn",
+  "password": "12312"
+}
+
+###
+
+POST http://localhost:5000/token
+Content-Type: application/json
+
+{
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJoZW5yeSIsImlhdCI6MTYxNTcxNTE4NSwiZXhwIjoxNjE1NzE4Nzg1fQ.MZ8KfbLd7_Tb-kncG6chjo3JXD46Yyyopeo0qj3MlKk"
+}
+
+###
+
+DELETE http://localhost:5000/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJoZW5yeSIsImlhdCI6MTYxNTcxNjE5NCwiZXhwIjoxNjE1NzE2NDk0fQ.GwjcMpf5itSfVepLKgnXlOvzkLgrwOhuXfOZVtOctbk
