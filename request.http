@@ -3,7 +3,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hb
 
 ###
 
-POST http://localhost:5000/login
+POST http://localhost:4000/login
 Content-Type: application/json
 
 {
@@ -22,5 +22,5 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:5000/logout
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJoZW5yeSIsImlhdCI6MTYxNTcxNjE5NCwiZXhwIjoxNjE1NzE2NDk0fQ.GwjcMpf5itSfVepLKgnXlOvzkLgrwOhuXfOZVtOctbk
+DELETE http://localhost:4000/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNzI3OGRlZTUyMDE0M2RkYWM1MmVkYyIsInVzZXJuYW1lIjoicW4iLCJpYXQiOjE2MTgxNTA4MzYsImV4cCI6MTYxODE1MTEzNn0.wkhASjfJU57IwxRi7njm0qJpNsgnaFYqEy8qTXTCcFA

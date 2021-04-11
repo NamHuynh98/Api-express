@@ -1,18 +1,11 @@
 const express = require("express");
 const app = express();
 const connectDB = require('./config/db')
-const Auth = require("./models/Auth")
-const authentication = require("./routers/authentication")
+const Authentication = require("./routers/authentication")
 
-authentication.configure(app)
+app.use(express.json())
 connectDB()
-// const newAccount = new Auth({username: "qn", password: "12312", refreshToken: null})
-// newAccount.save();
+Authentication.config(app)
 
-// app.get("/getText", (req,res)=>{
-//     res.json({text: "123"})
-// })
-
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT,()=>console.log("server " + PORT))
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => console.log("server " + PORT))
