@@ -53,7 +53,7 @@ module.exports = {
         app.post("/login", (req, res) => {
             Auth.find({ username: req.body.username, password: req.body.password })
                 .then((data) => {
-                    if (data.length === 0) return res.status(401);
+                    if (data.length === 0) return res.sendStatus(401);
                     const tokens = generateTokens({
                         username: data[0].username,
                         id: data[0]._id,
@@ -66,20 +66,20 @@ module.exports = {
                 })
                 .catch((error) => {
                     console.log(error);
-                    return res.status(403);
+                    return res.sendStatus(403);
                 });
         })
 
         app.delete("/logout", verifyToken, (req, res) => {
             Auth.find({ id: req.body.username })
                 .then((data) => {
-                    if (data.length === 0) return res.status(401);
+                    if (data.length === 0) return res.sendStatus(401);
                     updateRefreshToken({ username: data[0].username, id: data[0]._id }, null);
                     res.sendStatus(204);
                 })
                 .catch((error) => {
                     console.log(error);
-                    return res.status(403);
+                    return res.sendStatus(403);
                 });
         })
     }
