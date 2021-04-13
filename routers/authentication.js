@@ -32,7 +32,7 @@ module.exports = {
                 .catch(err => console.log(error))
         }
 
-        app.post("/token", (req, res) => {
+        app.post(`${process.env.ROUTER_ENV}/token`, (req, res) => {
             const refreshToken = req.body.refreshToken;
             if (!refreshToken) return res.sendStatus(401);
 
@@ -50,7 +50,7 @@ module.exports = {
                 })
         })
 
-        app.post("/login", (req, res) => {
+        app.post(`${process.env.ROUTER_ENV}/login`, (req, res) => {
             Auth.find({ username: req.body.username, password: req.body.password })
                 .then((data) => {
                     if (data.length === 0) return res.sendStatus(401);
@@ -70,7 +70,7 @@ module.exports = {
                 });
         })
 
-        app.delete("/logout", verifyToken, (req, res) => {
+        app.delete(`${process.env.ROUTER_ENV}/logout`, verifyToken, (req, res) => {
             Auth.find({ id: req.body.username })
                 .then((data) => {
                     if (data.length === 0) return res.sendStatus(401);

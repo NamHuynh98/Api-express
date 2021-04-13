@@ -5,7 +5,7 @@
   "author": "Quang Nam",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server"
   },
   "dependencies": {
     "config": "^3.3.6",
